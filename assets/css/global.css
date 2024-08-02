@@ -3,14 +3,18 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #f6f8fc;
+   background-image: url('../img/background2.webp');
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;  
 }
+
 
 .content {
     padding: 1rem;
     width: 100vw;
    
-    background-color: #fff;
+   background-color: transparent;
 }
 
 
