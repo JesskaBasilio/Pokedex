@@ -2,15 +2,18 @@
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
+
 body {
-    background-color: #f6f8fc;
+    background: url('../../assets/img/poke_bg.png');
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .content {
     padding: 1rem;
     width: 100vw;
    
-    background-color: #fff;
+    background-color: rgba(1,1,1,.5);
 }
 
 .content h1 {
