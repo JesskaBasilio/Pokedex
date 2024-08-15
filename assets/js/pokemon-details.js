@@ -2,14 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Obtém o número do Pokémon da URL
     const urlParams = new URLSearchParams(window.location.search);
     const pokemonNumber = urlParams.get('number');
-    
-    
+        
 
     // Verifica se o número do Pokémon foi obtido
     if (pokemonNumber) {
         fetchPokemonDetails(pokemonNumber);
     }
-
    
 
     // Função para buscar detalhes do Pokémon
@@ -30,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Atualiza os tipos
         const types = pokemon.types.map(typeInfo => typeInfo.type.name);
+        const type1 = types[0];
+        const type2 = types[1] || ''; // O segundo tipo pode estar ausente
+
         document.getElementById('type1').textContent = types[0] || '';
         document.getElementById('type2').textContent = types[1] || '';
 
@@ -59,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('type1').style.backgroundColor = typeColors[types[0]] || '#fff';
         document.getElementById('type2').style.backgroundColor = typeColors[types[1]] || '#fff';
 
+        document.getElementById('type2').style.display = type2 ? 'inline-block' : 'none';
         
         // Atualiza as estatísticas
         const stats = pokemon.stats.reduce((acc, stat) => {
@@ -67,8 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, {});
 
         
-
-
         document.querySelector('#stats .stat-row:nth-child(1) .stat-number').textContent = stats.hp || '0';
         document.querySelector('#stats .stat-row:nth-child(1) .bar-inner').style.width = `${(stats.hp || 0) / 2}%`;
 
@@ -87,5 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#stats .stat-row:nth-child(6) .stat-number').textContent = stats.speed || '0';
         document.querySelector('#stats .stat-row:nth-child(6) .bar-inner').style.width = `${(stats.speed || 0) / 2}%`;
     }
+
+    const backButton = document.getElementById('back-button');
+    backButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.history.back(); // Volta para a página anterior
+    });
 
 });
