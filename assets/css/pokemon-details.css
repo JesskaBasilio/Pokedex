@@ -117,7 +117,8 @@ body {
 #types {
     display: flex;
     gap: 12rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: .2rem;
+    margin-top: 3rem;
       
 }
 
@@ -127,12 +128,13 @@ body {
     border-radius: 1.3rem;
     font-size: 0.8rem;
     font-weight: bold;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     
        
 }
 
 #type1 {
+    
     background-color: rgb(116, 203, 72);
 }
 
@@ -152,7 +154,6 @@ body {
 #stats {
     width: 100%;
     font-size: 0.8rem;
-   
 }
 
 .stat-row {
